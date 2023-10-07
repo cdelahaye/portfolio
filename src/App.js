@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import NavBar from './components/NavBar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+
 import Home from './components/Home'
 import About from './components/About'
 import Work from './components/Work'
 import Contact from './components/Contact'
 
 
-
 const App = () => {
-  const [page, setPage] = useState('home')
 
 
   return (
     <div>
-      <div>
-        <button onClick={() => setPage('home')}>home</button>
-        <button onClick={() => setPage('about')}>about</button>
-        <button onClick={() => setPage('work')}>my work</button>
-        <button onClick={() => setPage('contact')}>contact</button>
-      </div>
-
-      <Home show={page === 'home'} />
-      <About show={page === 'about'}/>
-      <Work show={page === 'work'} />
-      <Contact show={page === 'contact'}/>
+      <Router> 
+      <NavBar /> 
+      <Routes> 
+        <Route path="/" element={<Home />} />
+        <Route path='/about' element={<About/>} /> 
+        <Route path='/work' element={<Work />} /> 
+        <Route path='/contact' element={<Contact />} /> 
+      </Routes> 
+    </Router> 
 
 
     </div>

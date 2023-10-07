@@ -1,22 +1,16 @@
-const Contact = ({show}) => {
-
-  if (!show) {
-    return null
-  }
+import { Text, GlobalStyle, Blank, Info } from './Elements'
 
 
-  return (
+const Contact = () => {
 
-    <div className="App">
-      <header className="App-home">
-        <p>
-          How to contact me.
-        </p>
-
-      </header>
-    </div>   
-  )
-
+  return(
+    <div>
+    <GlobalStyle />
+      <Blank> </Blank>
+      <Info>In progress</Info>
+      <Text> Contact me </Text>
+    </div>
+  );
 
 }
 

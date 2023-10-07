@@ -1,22 +1,24 @@
-const About = ({show}) => {
+import { Text, GlobalStyle, Blank, Info } from './Elements'
 
-  if (!show) {
-    return null
-  }
 
-  return (
+const About = () => {
 
-    <div className="App">
-      <header className="App-home">
-        <p>
-          About me. My CV.
-        </p>
-
-      </header>
-    </div>   
-  )
-
+  return(
+    <div>
+    <GlobalStyle />
+      <Blank> </Blank>
+      <Info>In progress</Info>
+      <Text> About me. My CV. </Text>
+    </div>
+  );
 
 }
 
 export default About
+
+
+
+
+
+
+

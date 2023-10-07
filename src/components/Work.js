@@ -1,26 +1,24 @@
-const Work = ({show}) => {
-
-  if (!show) {
-    return null
-  }
+import { Text, GlobalStyle, Blank, Info } from './Elements'
 
 
-  return (
+const Work = () => {
 
-    <div className="App">
-      <header className="App-home">
-        <p>
-          My projects.
-        </p>
-
-      </header>
-    </div>   
-  )
-
+  return(
+    <div>
+    <GlobalStyle />
+      <Blank> </Blank>
+      <Info>In progress</Info>
+      <Text> My projects </Text>
+    </div>
+  );
 
 }
 
 export default Work
+
+
+
+
 
 
 
