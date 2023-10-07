@@ -138,7 +138,6 @@ cursor: pointer;
 font-variant: small-caps;
 &.active { 
 	font-weight: bold;
-  text-decoration: underline overline; 
 } 
 `; 
 
