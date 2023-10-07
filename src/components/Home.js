@@ -1,7 +1,7 @@
 import { Text, Name, GlobalStyle, Blank, Icons, BoxedText } from './Elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap, 
-          faLaptopCode, faFolderTree, faFileCode, faCode,
+          faCode, // faLaptopCode, faFolderTree, faFileCode, 
           faComments } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 
