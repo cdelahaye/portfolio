@@ -89,7 +89,8 @@ const Home = () => {
                 display: "flex",
                 margin: 'auto',
                 alignItems: "start",
-                gap:150,
+                rowGap:120,
+                columnGap:150,
                 flexWrap: "wrap",
                 justifyContent:"space-around"
             }}>
