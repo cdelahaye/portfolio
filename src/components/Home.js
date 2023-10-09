@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, //faGraduationCap, 
     faCode, // faLaptopCode, faFolderTree, faFileCode, 
     faComments } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import React from 'react'
 
 import {Routes, Route, useNavigate} from 'react-router-dom'
@@ -19,21 +20,23 @@ const Box = (prop) => {
                 <Icons>
                     <FontAwesomeIcon icon={prop.icon} />
                 </Icons>
-                <div>  
-                    {prop.text}
-                </div>
+                <br/>  
+                {prop.text}
             </BoxedText>
         </div>
     )
 }
 
-const SayHi = () => {
+const SayHi = (prop) => {
     return (
         <div>
-            
             <TextCentered> Hello, I am </TextCentered>
             <Name>Clara Delahaye</Name>
-            <TextCentered>I am a Full Stack developer</TextCentered>
+            <TextCentered>I am a Full Stack developer
+                <br/>
+                <Icons onClick={prop.onclickLinkedin}> <FontAwesomeIcon icon={faLinkedin} /> </Icons>
+                <Icons onClick={prop.onclickGithub}> <FontAwesomeIcon icon={faGithub} />  </Icons>
+            </TextCentered>
         </div>
     )
 }
@@ -55,6 +58,13 @@ const Home = () => {
         navigate('/contact')
     }
 
+    const navigateLinkedin = () => {
+        window.open('https://fi.linkedin.com/in/clara-delahaye-640006176', '_blank');
+    }
+
+    const navigateGithub = () => {
+        window.open('https://github.com/cdelahaye', '_blank')
+    }
 
     return(
         <div>
@@ -78,7 +88,7 @@ const Home = () => {
                 height:300,
                 display: "flex",
                 margin: 'auto',
-                alignItems: "center",
+                alignItems: "start",
                 gap:150,
                 flexWrap: "wrap",
                 justifyContent:"space-around"
@@ -93,7 +103,7 @@ const Home = () => {
                     onClick={navigateToInfo}
                 />
 
-                <SayHi/>
+                <SayHi onclickLinkedin={navigateLinkedin} onclickGithub={navigateGithub}/>
 
                 <Box 
                     text="See what I have done." 
