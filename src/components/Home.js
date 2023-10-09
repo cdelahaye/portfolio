@@ -1,98 +1,119 @@
-import { Text, Name, GlobalStyle, Blank, Icons, BoxedText } from './Elements'
+import { TextCentered, Name, GlobalStyle, Blank, Icons, BoxedText } from './Elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGraduationCap, 
-          faCode, // faLaptopCode, faFolderTree, faFileCode, 
-          faComments } from '@fortawesome/free-solid-svg-icons'
-import React, { useState } from 'react'
+import { faInfoCircle, //faGraduationCap, 
+    faCode, // faLaptopCode, faFolderTree, faFileCode, 
+    faComments } from '@fortawesome/free-solid-svg-icons'
+import React from 'react'
 
+import {Routes, Route, useNavigate} from 'react-router-dom'
+import About from './About'
+import Work from './Work'
+import Contact from './Contact'
+
+
+
+const Box = (prop) => {
+    return (
+        <div onClick={prop.onClick} > 
+            <BoxedText>
+                <Icons>
+                    <FontAwesomeIcon icon={prop.icon} />
+                </Icons>
+                <div>  
+                    {prop.text}
+                </div>
+            </BoxedText>
+        </div>
+    )
+}
+
+const SayHi = () => {
+    return (
+        <div>
+            
+            <TextCentered> Hello, I am </TextCentered>
+            <Name>Clara Delahaye</Name>
+            <TextCentered>I am a Full Stack developer</TextCentered>
+        </div>
+    )
+}
 
 
 
 const Home = () => {
+    const navigate = useNavigate()
 
-  const [hover, setHover] = useState(false)
-  const [showInfo, setShowInfo] = useState(false)
-  const [showWork, setShowWork] = useState(false)
-  const [showContact, setShowContact] = useState(false)
-
-  const DisplayDetails = () => {
-    if (showInfo) {
-      return ("Learn a bit more about me.")
-    } else if (showWork) {
-      return ("See what I have done.")
-    } else if (showContact) {
-      return ("Let's get in touch!")
+    const navigateToInfo = () => {
+        navigate('/about')
     }
-  }
 
-  return(
-    <div>
-    <GlobalStyle />
-      <Blank> </Blank>
-      <Text> Hello, I am </Text>
-      <Name>Clara Delahaye</Name>
-      <Text>I am a Full Stack developer</Text>
+    const navigateToWork = () => {
+        navigate('/work')
+    }
 
-      <Icons>
-        <FontAwesomeIcon 
-          icon={faGraduationCap} 
-          onClick={()=> console.log('clicked')} 
-          onMouseEnter = { (e) => {
-            e.preventDefault()
-            setHover(true)
-            setShowInfo(true)
-          }}
-          onMouseLeave = { (e) => {
-            e.preventDefault()
-            setHover(false)
-            setShowInfo(false)
-          }}
-        />
-      </Icons>
+    const navigateToContact = () => {
+        navigate('/contact')
+    }
 
-      <Icons>
-        <FontAwesomeIcon 
-          icon={faCode} 
-          onClick={()=> console.log('clicked')} 
-          onMouseEnter = { (e) => {
-            e.preventDefault()
-            setHover(true)
-            setShowWork(true)
-          }}
-          onMouseLeave = { (e) => {
-            e.preventDefault()
-            setHover(false)
-            setShowWork(false)
-          }}
-        />
-      </Icons>  
 
-      <Icons>
-        <FontAwesomeIcon 
-          icon={faComments} 
-          onClick={()=> console.log('clicked')} 
-          onMouseEnter = { (e) => {
-            e.preventDefault()
-            setHover(true)
-            setShowContact(true)
-          }}
-          onMouseLeave = { (e) => {
-            e.preventDefault()
-            setHover(false)
-            setShowContact(false)
-          }}
-        />
-      </Icons>
+    return(
+        <div>
 
-      <BoxedText>
-        <DisplayDetails/>  
-      </BoxedText>
+            <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
 
-    </div>
-  );
+
+            <GlobalStyle />
+
+          
+
+            <Blank> </Blank>
+
+
+            <div style={{
+                width:1000,
+                height:300,
+                display: "flex",
+                margin: 'auto',
+                alignItems: "center",
+                gap:150,
+                flexWrap: "wrap",
+                justifyContent:"space-around"
+            }}>
+
+
+                
+
+                <Box 
+                    text="Learn a bit about me." 
+                    icon={faInfoCircle}
+                    onClick={navigateToInfo}
+                />
+
+                <SayHi/>
+
+                <Box 
+                    text="See what I have done." 
+                    icon={faCode}
+                    onClick={navigateToWork}
+                />
+                <Box 
+                    text="Let's get in touch!" 
+                    icon={faComments}
+                    onClick={navigateToContact}
+                />
+
+
+
+            </div>
+        </div>
+    );
 
 }
-
+ 
 export default Home
 
 

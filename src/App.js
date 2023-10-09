@@ -1,3 +1,4 @@
+import React from 'react'
 import NavBar from './components/NavBar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
@@ -8,24 +9,24 @@ import Contact from './components/Contact'
 
 
 const App = () => {
+  
+ 
+    return (
+        <div>
+            <Router> 
+                <NavBar /> 
+                <Routes> 
+                    <Route path="/portfolio" element={<Home />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path='/about' element={<About/>} /> 
+                    <Route path='/work' element={<Work />} /> 
+                    <Route path='/contact' element={<Contact />} /> 
+                </Routes> 
+            </Router> 
 
-
-  return (
-    <div>
-      <Router> 
-      <NavBar /> 
-      <Routes> 
-        <Route path="/portfolio" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path='/about' element={<About/>} /> 
-        <Route path='/work' element={<Work />} /> 
-        <Route path='/contact' element={<Contact />} /> 
-      </Routes> 
-    </Router> 
-
-
-    </div>
-  )
+ 
+        </div>
+    )
 }
 
 export default App

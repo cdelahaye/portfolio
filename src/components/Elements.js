@@ -24,54 +24,61 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Text = styled.p`
   font-family:'New Century Schoolbook', 'TeX Gyre Schola', serif;
-  font-size: 25px;
+  font-size: 20px;
   color: #D5DEE4;
   text-align: left;
-  padding:1vh 0 0 15vw; 
+  padding: 0 0 0 0; 
   margin: 0;
+`
+
+export const TextCentered = styled(Text)`
+  text-align: center;
 `
 
 export const Name = styled.p`
   color: #78BBD0;
-  font-size: 66px;
-  text-align: left;
+  font-size: 42px;
+  text-align: center;
   font-weight: bold; 
-  padding:2vh 0 0 15vw; 
+  padding:2vh 0 0 0; 
   margin: 0;
 `
 
+// --- Icons and boxed texts ---
+
+
 export const Icons = styled.button`
-  background-color: #78BBD0;
+  background:transparent;
   border-radius: 5px;
-  border: solid #78BBD0;
+  border: solid transparent;
   color: #D5DEE4;
-  padding: 0 0 0 0;
   font-size: 42px;
-  position: relative;
-  left: 17vw;
-  margin-top: 5vh;
-  margin-right: 8vh;
+  margin-bottom: 2vh;
   &:hover { 
-    color: #2e3b46;
     cursor: pointer;
-    
-  }
+  };
 `;
 
 export const BoxedText = styled.p`
   color: #D5DEE4;
-  font-size: 22px;
+  font-size: 15px;
   font-family: monospace;
   text-align: center;
-  position: relative;
-  left: 15vw;
-  margin: 5vh 0 0 0;
-  border: .1vw solid #D5DEE4;
-  width: 420px;
-  &:empty {
-    border: none
-  }
+  border: .1vw dashed #D5DEE4;
+  padding: 15px;
+  width: 160px;
+  margin: auto;
+  &:hover { 
+    cursor: pointer;
+    border: .1vw solid #78BBD0;
+  };
 `
+
+
+
+
+// --- --- ---
+
 
 
 export const Blank = styled.p`
@@ -104,7 +111,7 @@ z-index: 12;
 export const NavLink = styled(Link)` 
 color: #F5F5F5; 
 float: right;
-font-size: 25px;
+font-size: 20px;
 align-items: center; 
 text-decoration: none; 
 padding: 0 25px; 
@@ -121,24 +128,14 @@ font-variant: small-caps;
 `; 
 
 
-export const NavLinkContact = styled(Link)` 
+export const NavLinkContact = styled(NavLink)` 
 color: #FB9902; 
 border: .1vw;
 border-style: solid;
 border-radius: 5px;
 padding: 1vh; 
 margin-left: 10vw;
-
-float: right;
-font-size: 25px;
-align-items: center; 
-text-decoration: none; 
-height: 100%; 
-cursor: pointer; 
 font-variant: small-caps;
-&.active { 
-	font-weight: bold;
-} 
 `; 
 
 
@@ -171,3 +168,8 @@ width: 420px;
   border: none
 }
 `
+
+
+
+
+
