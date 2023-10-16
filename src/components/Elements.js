@@ -17,10 +17,10 @@ Navigation bar: on focus = bold ; for contact, background changes to #222C34
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    background: radial-gradient(#28343e, #141a1f); 
-    height: 100vh;  
+    background: radial-gradient(#28343e, #141a1f);
+    height: 100%;   /* 100vh */
   }`
-
+/* background: radial-gradient(#28343e, #141a1f);  */
 
 export const Text = styled.p`
   font-family:'New Century Schoolbook', 'TeX Gyre Schola', serif;
