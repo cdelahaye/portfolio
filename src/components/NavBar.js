@@ -8,16 +8,16 @@ const NavBar = () => {
                 <Bars /> 
 
                 <NavMenu> 
-                    <NavLink  to='/home'> 
+                    <NavLink  to='/portfolio/home'> 
 			Home 
                     </NavLink> 
-                    <NavLink to='/about'> 
+                    <NavLink to='/portfolio/about'> 
 			About me 
                     </NavLink> 
-                    <NavLink to='/work'> 
+                    <NavLink to='/portfolio/work'> 
 			My projects
                     </NavLink> 
-                    {/*                     <NavLinkContact to='/contact'> 
+                    {/*                     <NavLinkContact to='/portfolio/contact'> 
 			Contact me
                     </NavLinkContact>  */}
                 </NavMenu> 

@@ -1,16 +1,17 @@
 import { TextCentered, Name, GlobalStyle, Blank, Icons, BoxedText } from './Elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, //faGraduationCap, 
-    faCode, // faLaptopCode, faFolderTree, faFileCode, 
-    faComments } from '@fortawesome/free-solid-svg-icons'
+    faCode} from '@fortawesome/free-solid-svg-icons' // faLaptopCode, faFolderTree, faFileCode, 
+    // faComments } 
+
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import React from 'react'
 
 import {Routes, Route, useNavigate} from 'react-router-dom'
 import About from './About'
 import Work from './Work'
-import Contact from './Contact'
-
+/* import Contact from './Contact'
+ */
 
 
 const Box = (prop) => {
@@ -47,16 +48,16 @@ const Home = () => {
     const navigate = useNavigate()
 
     const navigateToInfo = () => {
-        navigate('/about')
+        navigate('/portfolio/about')
     }
 
     const navigateToWork = () => {
-        navigate('/work')
+        navigate('/portfolio/work')
     }
 
-    const navigateToContact = () => {
-        navigate('/contact')
-    }
+    /*     const navigateToContact = () => {
+        navigate('/portfolio/contact')
+    } */
 
     const navigateLinkedin = () => {
         window.open('https://fi.linkedin.com/in/clara-delahaye-640006176', '_blank');
@@ -72,8 +73,8 @@ const Home = () => {
             <Routes>
                 <Route path="/about" element={<About />} />
                 <Route path="/work" element={<Work />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
+                {/*                 <Route path="/contact" element={<Contact />} />
+ */}            </Routes>
 
 
             <GlobalStyle />
@@ -111,11 +112,11 @@ const Home = () => {
                     icon={faCode}
                     onClick={navigateToWork}
                 />
-                <Box 
+                {/*                 <Box 
                     text="Let's get in touch!" 
                     icon={faComments}
                     onClick={navigateToContact}
-                />
+                /> */}
 
 
 
