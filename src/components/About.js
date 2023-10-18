@@ -97,7 +97,8 @@ const Resume = () => {
 
                 <div className='skill-title'>
                   Frontend   
-                </div>             {skillsFrontend}
+                </div>             
+                {skillsFrontend}
 
                 <div className='skill-title'>
                   Backend   
