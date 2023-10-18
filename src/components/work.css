@@ -1,0 +1,94 @@
+
+.work-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative; 
+    justify-content: space-evenly;
+    color: white;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+
+/* --- --- --- Projects --- --- --- */
+
+.work-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-evenly;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #5b748b;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    margin: 25px;
+    align-items: center;
+    &:hover {
+        background-color: #141a1f;
+    }
+}
+
+.work-item .date {
+    margin-top: -70px;
+    margin-left: -5px;
+    max-width: fit-content;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    &:empty {
+        border: none;
+    }
+}
+
+
+.work-item .title {
+    margin-top: -50px;
+    flex-grow: 1;
+    color: #78BBD0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: fit-content;
+    width: auto;
+}
+
+.work-item .github-link {
+    margin: 0;
+    margin-top: -40px;
+    padding: 0;
+    height: 60px;
+    width: 15%;
+    flex-shrink: 0;
+    font-size: 12pt;
+    &:hover { 
+        cursor: pointer;
+    };
+}
+
+.work-item .description {
+    width: 100%;
+    text-align: justify;
+}
+
+.work-item .tags {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+    margin: 5px;
+    margin-bottom: -10%;
+    min-width: 42px;
+    border: 1px solid gray;
+    text-align: center;
+    &:empty {
+        border: none;
+    }
+}
+
+
