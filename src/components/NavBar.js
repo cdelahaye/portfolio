@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Nav, NavLink, NavLinkContact, Bars, NavMenu} from './Elements'; 
+import { Nav, NavLink, Bars, NavMenu} from './Elements'; 
 
 const NavBar = () => { 
     return ( 
@@ -17,9 +17,9 @@ const NavBar = () => {
                     <NavLink to='/work'> 
 			My projects
                     </NavLink> 
-                    <NavLinkContact to='/contact'> 
+                    {/*                     <NavLinkContact to='/contact'> 
 			Contact me
-                    </NavLinkContact> 
+                    </NavLinkContact>  */}
                 </NavMenu> 
 
 

@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home'
 import About from './components/About'
 import Work from './components/Work'
-import Contact from './components/Contact'
-
+/* import Contact from './components/Contact'
+ */
 
 const App = () => {
   
@@ -20,7 +20,7 @@ const App = () => {
                     <Route path="/home" element={<Home />} />
                     <Route path='/about' element={<About/>} /> 
                     <Route path='/work' element={<Work />} /> 
-                    <Route path='/contact' element={<Contact />} /> 
+                    {/* <Route path='/contact' element={<Contact />} />  */}
                 </Routes> 
             </Router> 
 
